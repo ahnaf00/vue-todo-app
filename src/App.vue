@@ -52,7 +52,7 @@ onMounted(()=>{
               <li class="list-group-item d-flex justify-content-between align-items-center" v-for="task in todoStore.todos" :key="task.id">
                 <div class="" >
                   <input type="checkbox" v-model="task.completed" class="form-check-input me-2">
-                  <span :class="task.completed ? 'text-decoration-line-through':'' ">{{ task }}</span>
+                  <span :class="task.completed ? 'text-decoration-line-through':'' ">{{ task.title }}</span>
                 </div>
                 
                 
