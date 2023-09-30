@@ -10,9 +10,8 @@ export const useTodoStore = defineStore({
     todoForm:{
       title:null,
       userID:1,
+      completed:null
     },
-    completed:false,
-    isChecked:false,
     editID:0,
     isEdit: false
   }),
@@ -75,18 +74,13 @@ export const useTodoStore = defineStore({
         this.isEdit = false
       })
     },
-
-    toggleCheckbox(id) 
+    updateTodo(id)
     {
-
       const {data} = axios.put(`https://jsonplaceholder.typicode.com/todos/${id}`, this.todoForm).then((res)=>{
         console.log(res.data);
-        this.isChecked = !this.isChecked
         this.todoForm.completed = true
       })
-  
-    }
-
+    },
   }
   
 })
